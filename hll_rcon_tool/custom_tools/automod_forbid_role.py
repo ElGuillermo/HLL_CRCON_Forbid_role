@@ -4,7 +4,7 @@ automod_forbid_role.py
 A plugin for HLL CRCON (https://github.com/MarechJ/hll_rcon_tool)
 that blocks role(s) access to defined players.
 
-by https://github.com/ElGuillermo
+Source : https://github.com/ElGuillermo
 
 Feel free to use/modify/distribute, as long as you keep this note in your code
 """
@@ -16,12 +16,11 @@ from rcon.rcon import Rcon
 from rcon.settings import SERVER_INFO
 from custom_tools.custom_common import (
     CLAN_URL,
-    LANG,
-    TRANSL,
     get_avatar_url,
     get_external_profile_url,
     send_discord_embed
 )
+from custom_tools.custom_translations import TRANSL
 
 
 # Configuration (you must review/change these !)
@@ -41,6 +40,10 @@ USE_DISCORD = True
 DISCORD_WEBHOOK = (
     "https://discord.com/api/webhooks/..."
 )
+
+# Discord embeds strings translations
+# Available : 0 for english, 1 for french, 2 for german
+LANG = 0
 
 # The interval between watch turns (in seconds)
 # Recommended : as the stats must be gathered for all the players,
@@ -72,12 +75,12 @@ OBSERVED_PLAYERS = [
 # ----------------------------------------------
 
 # {} replace values in this order :
-# pseudo (str), role (str)
-# ie : "Sorry, {} !\n\nYou can't play\n'{}'\non this server."
+# pseudo (str), role (str), reason (str), clan url (automatic)
+# ie : "Sorry, {} !\n\nYou can't play\n'{}'\non this server.\n\nReason: {}\n\nContact: {}"
 WARNING_MSG = (
     "(Message automatique)\n\n"
-    "Désolé, {} !\n\n"
-    "Tu as été puni parce que tu joues\n\n"
+    "Attention, {} !\n\n"
+    "Tu joues\n\n"
     "{}\n\n"
     "alors que cela t'est interdit sur ce serveur.\n\n"
     "Raison :\n"
@@ -87,7 +90,7 @@ WARNING_MSG = (
 
 # {} replace values in this order :
 # pseudo (str), role (str)
-# ie : "Sorry, {} !\n\nYou can't play\n'{}'\non this server."
+# ie : "Sorry, {} !\n\nYou can't play\n'{}'\non this server.\n\nReason: {}\n\nContact: {}"
 PUNISH_MSG = (
     "\n(Message automatique)\n\n"
     "Désolé, {} !\n\n"
