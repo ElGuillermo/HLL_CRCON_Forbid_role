@@ -12,13 +12,17 @@ Feel free to use/modify/distribute, as long as you keep this note in your code
 import logging
 from time import sleep
 from typing import Literal
+import discord
 from rcon.rcon import Rcon
 from rcon.settings import SERVER_INFO
+from rcon.utils import get_server_number
 from custom_tools.custom_common import (
     CLAN_URL,
+    DISCORD_EMBED_AUTHOR_URL,
+    DISCORD_EMBED_AUTHOR_ICON_URL,
+    discord_embed_send,
     get_avatar_url,
-    get_external_profile_url,
-    send_discord_embed
+    get_external_profile_url
 )
 from custom_tools.custom_translations import TRANSL
 
@@ -37,9 +41,19 @@ TEST_MODE = False
 USE_DISCORD = True
 
 # Dedicated Discord's channel webhook
-DISCORD_WEBHOOK = (
-    "https://discord.com/api/webhooks/..."
-)
+# ServerNumber, Webhook, Enabled
+SERVER_CONFIG = [
+    ["https://discord.com/api/webhooks/...", True],  # Server 1
+    ["https://discord.com/api/webhooks/...", False],  # Server 2
+    ["https://discord.com/api/webhooks/...", False],  # Server 3
+    ["https://discord.com/api/webhooks/...", False],  # Server 4
+    ["https://discord.com/api/webhooks/...", False],  # Server 5
+    ["https://discord.com/api/webhooks/...", False],  # Server 6
+    ["https://discord.com/api/webhooks/...", False],  # Server 7
+    ["https://discord.com/api/webhooks/...", False],  # Server 8
+    ["https://discord.com/api/webhooks/...", False],  # Server 9
+    ["https://discord.com/api/webhooks/...", False]  # Server 10
+]
 
 # Discord embeds strings translations
 # Available : 0 for english, 1 for french, 2 for german
@@ -56,18 +70,18 @@ WATCH_INTERVAL_SECS = 40
 # action : Choose either "warning" (or "message"), "punish" or "kick"
 # note : "punish" will report failures as long as the player isn't alive on map
 OBSERVED_PLAYERS = [
-#     {
-#         "id": "76561123456918684",  # SomeGuy
-#         "roles": ["armycommander", "officer", "tankcommander", "spotter"],
-#         "reason": "No comms",
-#         "action": "punish"
-#     },
-#     {
-#         "id": "76561112345601973",  # SomeOtherGuy
-#         "roles": ["armycommander", "officer", "tankcommander", "spotter"],
-#         "reason": "Trolling",
-#         "action": "punish"
-#     }
+    # {
+    #     "id": "76561234562504900",  # Someguy
+    #     "roles": ["armycommander", "officer"],
+    #     "reason": "No voice comms",
+    #     "action": "punish"
+    # }
+    # {
+    #     "id": "76561123456004778",  # SomeOtherGuy
+    #     "roles": ["armycommander"],
+    #     "reason": "Toxic",
+    #     "action": "punish"
+    # }
 ]
 
 
@@ -268,6 +282,12 @@ def you_cant_take_this_role(
     # Discord
     if USE_DISCORD:
 
+        # Check if enabled
+        server_number = int(get_server_number())
+        if not SERVER_CONFIG[server_number - 1][1]:
+            return
+        discord_webhook = SERVER_CONFIG[server_number - 1][0]
+
         # message
         embed_desc_txt = (
             f"● {soldier_team_translated} / {soldier_unit_name}\n"
@@ -287,15 +307,22 @@ def you_cant_take_this_role(
         else:
             embed_color = 0xffffff
 
-        send_discord_embed(
-            BOT_NAME,
-            embed_title=soldier_name,
-            embed_title_url=get_external_profile_url(soldier_id, soldier_name),
-            steam_avatar_url=get_avatar_url(soldier_id),
-            embed_desc_txt=embed_desc_txt,
-            embed_color=embed_color,
-            discord_webhook=DISCORD_WEBHOOK
+        # Create and send discord embed
+        webhook = discord.SyncWebhook.from_url(discord_webhook)
+        embed = discord.Embed(
+            title=soldier_name,
+            url=get_external_profile_url(soldier_id, soldier_name),
+            description=embed_desc_txt,
+            color=embed_color
         )
+        embed.set_author(
+            name=BOT_NAME,
+            url=DISCORD_EMBED_AUTHOR_URL,
+            icon_url=DISCORD_EMBED_AUTHOR_ICON_URL
+        )
+        embed.set_thumbnail(url=get_avatar_url(soldier_id))
+
+        discord_embed_send(embed, webhook)
 
 
 # Launching - initial pause : wait to be sure the CRCON is fully started
