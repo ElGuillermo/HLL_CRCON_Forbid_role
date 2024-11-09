@@ -52,7 +52,7 @@ OBSERVED_PLAYERS = [
     #     "roles": ["armycommander", "officer],
     #     "reason": "Toxic",
     #     "action": "punish"
-    # }
+    # },
     # {
     #     "id": "76561198354123456",  # SomeOtherGuy
     #     "roles": ["armycommander"],
