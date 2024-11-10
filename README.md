@@ -1,4 +1,4 @@
-# HLL_CRCON_Forbid_roles
+# HLL_CRCON_Forbid_role
 
 A plugin for HLL CRCON (https://github.com/MarechJ/hll_rcon_tool)
 that blocks role(s) access to defined players.
