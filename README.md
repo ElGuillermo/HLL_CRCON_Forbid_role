@@ -1,6 +1,6 @@
 # HLL_CRCON_Forbid_role
 
-A plugin for HLL CRCON (https://github.com/MarechJ/hll_rcon_tool)
+A plugin for Hell Let Loose (HLL) CRCON (https://github.com/MarechJ/hll_rcon_tool)
 that blocks role(s) access to defined players.
 
 ![375492543-27dd6f25-13ed-45b5-9f7e-ed5ceee5d28f](https://github.com/user-attachments/assets/2cdea1c1-0fcd-403b-8011-0a9bd217e3ad)
