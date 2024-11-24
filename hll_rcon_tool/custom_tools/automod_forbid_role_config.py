@@ -1,5 +1,5 @@
 """
-automod_forbid_role_config
+automod_forbid_role_config.py
 
 A plugin for HLL CRCON (https://github.com/MarechJ/hll_rcon_tool)
 that filters (kick) players based upon their language.
@@ -36,13 +36,6 @@ SERVER_CONFIG = [
 # Available : 0 for english, 1 for french, 2 for german
 LANG = 0
 
-# The interval between watch turns (in seconds)
-# Recommended : as the stats must be gathered for all the players,
-#               requiring some amount of data from the game server,
-#               you may encounter slowdowns if done too frequently.
-# Default : 60
-WATCH_INTERVAL_SECS = 60
-
 # Define the guys and the roles they can't play
 # action : Choose either "warning" (or "message"), "punish" or "kick"
 # note : "punish" will report failures as long as the player isn't alive on map
@@ -62,7 +55,7 @@ OBSERVED_PLAYERS = [
 ]
 
 
-# Miscellaneous
+# Miscellaneous (you don't have to change these)
 # ----------------------------------------------
 
 # {} replace values in this order :
@@ -80,7 +73,7 @@ WARNING_MSG = (
 )
 
 # {} replace values in this order :
-# pseudo (str), role (str), reason (str), clan url (automatic)
+# pseudo (str), role (str)
 # ie : "Sorry, {} !\n\nYou can't play\n'{}'\non this server.\n\nReason: {}\n\nContact: {}"
 PUNISH_MSG = (
     "\n(Message automatique)\n\n"
@@ -95,3 +88,10 @@ PUNISH_MSG = (
 
 # Bot name that will be displayed in CRCON "audit logs" and Discord embeds
 BOT_NAME = "CRCON_forbid_role"
+
+# The interval between watch turns (in seconds)
+# Recommended : as the stats must be gathered for all the players,
+#               requiring some amount of data from the game server,
+#               you may encounter slowdowns if done too frequently.
+# Default : 60
+WATCH_INTERVAL_SECS = 60
