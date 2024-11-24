@@ -18,6 +18,7 @@ that blocks role(s) access to defined players.
 ## Install
 - Log into your CRCON host machine using SSH and enter these commands (one line at at time) :  
 (If you already have installed any other "custom tools", you can skip the first part)
+
 First part
 ```shell
 cd /root/hll_rcon_tool
