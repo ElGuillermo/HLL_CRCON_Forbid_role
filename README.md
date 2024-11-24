@@ -35,7 +35,7 @@ that blocks role(s) access to defined players.
   ```
 
 ## Config
-- Edit `/root/hll_rcon_tool/custom_tools/automod_forbid_role_config.py` and set the parameters to fit your needs ;
+- Edit `/root/hll_rcon_tool/custom_tools/automod_forbid_role_config.py` and set the parameters to fit your needs.
 - Restart CRCON :
   ```shell
   cd /root/hll_rcon_tool
