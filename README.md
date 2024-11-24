@@ -16,13 +16,17 @@ that blocks role(s) access to defined players.
 > If so, you'll have to adapt the commands below accordingly.
 
 ## Install
-- Copy `restart.sh` in CRCON's root (`/root/hll_rcon_tool/`) ;
-- Create a `custom_tools` folder in CRCON's root (`/root/hll_rcon_tool/`) ;
-- Copy these files into the newly created `/root/hll_rcon_tool/custom_tools/` folder :
-  - `common_functions.py`
-  - `common_translations.py`
-  - `automod_forbid_role.py`
-  - `automod_forbid_role_config.py`
+- Log into your CRCON host machine using SSH and enter these commands (one line at at time) :
+```shell
+cd /root/hll_rcon_tool
+wget https://raw.githubusercontent.com/ElGuillermo/HLL_RCON_restart/refs/heads/main/restart.sh
+mkdir custom_tools
+cd custom_tools
+wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_functions.py/refs/heads/main/common_functions.py
+wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_translations.py/refs/heads/main/common_translations.py
+wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_Forbid_role/refs/heads/main/hll_rcon_tool/custom_tools/automod_forbid_role.py
+wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_Forbid_role/refs/heads/main/hll_rcon_tool/custom_tools/automod_forbid_role_config.py
+```
 - Edit `/root/hll_rcon_tool/config/supervisord.conf` to add this bot section : 
   ```conf
   [program:automod_forbid_role]
