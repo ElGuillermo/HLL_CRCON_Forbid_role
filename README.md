@@ -5,6 +5,8 @@ that blocks role(s) access to defined players.
 
 ![375492543-27dd6f25-13ed-45b5-9f7e-ed5ceee5d28f](https://github.com/user-attachments/assets/2cdea1c1-0fcd-403b-8011-0a9bd217e3ad)
 
+## Install
+
 > [!NOTE]
 > The shell commands given below assume your CRCON is installed in `/root/hll_rcon_tool`.  
 > You may have installed your CRCON in a different folder.  
@@ -15,7 +17,6 @@ that blocks role(s) access to defined players.
 >   
 > If so, you'll have to adapt the commands below accordingly.
 
-## Install
 - Log into your CRCON host machine using SSH and enter these commands (one line at at time) :
 
   First part  
