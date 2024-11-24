@@ -5,6 +5,16 @@ that blocks role(s) access to defined players.
 
 ![375492543-27dd6f25-13ed-45b5-9f7e-ed5ceee5d28f](https://github.com/user-attachments/assets/2cdea1c1-0fcd-403b-8011-0a9bd217e3ad)
 
+> [!NOTE]
+> The shell commands given below assume your CRCON is installed in `/root/hll_rcon_tool`.  
+> You may have installed your CRCON in a different folder.  
+>   
+> Some Ubuntu Linux distributions disable the `root` user and `/root` folder by default.  
+> In these, your default user is `ubuntu`, using the `/home/ubuntu` folder.  
+> You should then find your CRCON in `/home/ubuntu/hll_rcon_tool`.  
+>   
+> If so, you'll have to adapt the commands below accordingly.
+
 ## Install
 - Copy `restart.sh` in CRCON's root (`/root/hll_rcon_tool/`) ;
 - Create a `custom_tools` folder in CRCON's root (`/root/hll_rcon_tool/`) ;
