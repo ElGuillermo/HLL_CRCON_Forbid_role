@@ -18,21 +18,21 @@ that blocks role(s) access to defined players.
 ## Install
 - Log into your CRCON host machine using SSH and enter these commands (one line at at time) :  
 
-First part (if you already have installed any other "custom tools" from ElGuillermo, you can skip this part)
-```shell
-cd /root/hll_rcon_tool
-wget https://raw.githubusercontent.com/ElGuillermo/HLL_RCON_restart/refs/heads/main/restart.sh
-mkdir custom_tools
-cd custom_tools
-wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_functions.py/refs/heads/main/common_functions.py
-wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_translations.py/refs/heads/main/common_translations.py
-```
-Second part
-```shell
-cd /root/hll_rcon_tool/custom_tools
-wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_Forbid_role/refs/heads/main/hll_rcon_tool/custom_tools/automod_forbid_role.py
-wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_Forbid_role/refs/heads/main/hll_rcon_tool/custom_tools/automod_forbid_role_config.py
-```
+  First part (if you already have installed any other "custom tools" from ElGuillermo, you can skip this part)
+  ```shell
+  cd /root/hll_rcon_tool
+  wget https://raw.githubusercontent.com/ElGuillermo/HLL_RCON_restart/refs/heads/main/restart.sh
+  mkdir custom_tools
+  cd custom_tools
+  wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_functions.py/refs/heads/main/common_functions.py
+  wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_translations.py/refs/heads/main/common_translations.py
+  ```
+  Second part
+  ```shell
+  cd /root/hll_rcon_tool/custom_tools
+  wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_Forbid_role/refs/heads/main/hll_rcon_tool/custom_tools/automod_forbid_role.py
+  wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_Forbid_role/refs/heads/main/hll_rcon_tool/custom_tools/automod_forbid_role_config.py
+  ```
 - Edit `/root/hll_rcon_tool/config/supervisord.conf` to add this bot section : 
   ```conf
   [program:automod_forbid_role]
