@@ -18,6 +18,7 @@ that blocks role(s) access to defined players.
 ## Install
 - Log into your CRCON host machine using SSH and enter these commands (one line at at time) :  
 (If you already have installed any other "custom tools", you can skip the first part)
+First part
 ```shell
 cd /root/hll_rcon_tool
 wget https://raw.githubusercontent.com/ElGuillermo/HLL_RCON_restart/refs/heads/main/restart.sh
@@ -26,6 +27,7 @@ cd custom_tools
 wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_functions.py/refs/heads/main/common_functions.py
 wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_translations.py/refs/heads/main/common_translations.py
 ```
+Second part
 ```shell
 cd /root/hll_rcon_tool/custom_tools
 wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_Forbid_role/refs/heads/main/hll_rcon_tool/custom_tools/automod_forbid_role.py
