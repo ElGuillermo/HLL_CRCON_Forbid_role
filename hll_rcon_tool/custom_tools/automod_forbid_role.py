@@ -127,6 +127,7 @@ def you_cant_take_this_role(
             try:
                 rcon.punish(
                     player_name=soldier_name,
+                    player_id=soldier_id,  # v18
                     reason=custom_punish_message,
                     by=config.BOT_NAME
                 )
@@ -145,9 +146,9 @@ def you_cant_take_this_role(
             try:
                 rcon.kick(
                     player_name=soldier_name,
+                    player_id=soldier_id,
                     reason=custom_punish_message,
-                    by=config.BOT_NAME,
-                    player_id=soldier_id
+                    by=config.BOT_NAME
                 )
                 result = "✅ " + TRANSL["success"][config.LANG]
             except Exception:
