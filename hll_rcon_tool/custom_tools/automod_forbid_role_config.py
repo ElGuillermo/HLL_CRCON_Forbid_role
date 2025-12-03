@@ -48,7 +48,7 @@ LANG = 0
 OBSERVED_PLAYERS = [
     # {
     #     "id": "76561198051234560",  # someGuy
-    #     "roles": ["armycommander", "officer],
+    #     "roles": ["armycommander", "officer"],
     #     "reason": "Toxic",
     #     "action": "punish"
     # },
