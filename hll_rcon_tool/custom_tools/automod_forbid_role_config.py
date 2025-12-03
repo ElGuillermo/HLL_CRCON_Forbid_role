@@ -33,7 +33,9 @@ SERVER_CONFIG = [
 ]
 
 # Discord embeds strings translations
-# Available : 0 for english, 1 for french, 2 for german
+# Available : 0 for english, 1 for french, 2 for german,
+#             3 for spanish, 4 for polish, 5 for brazilian portuguese,
+#             6 for russian, 7 for chinese
 LANG = 0
 
 # Define the guys and the roles they can't play
