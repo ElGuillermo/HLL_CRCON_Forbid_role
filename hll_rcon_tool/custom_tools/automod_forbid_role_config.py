@@ -37,6 +37,7 @@ SERVER_CONFIG = [
 LANG = 0
 
 # Define the guys and the roles they can't play
+# roles : available are : ["armycommander", "officer", "rifleman", "engineer", "medic", "antitank", "automaticrifleman", "assault", "heavymachinegunner", "support", "spotter", "sniper", "tankcommander", "crewman", "artilleryobserver", "artilleryengineer", "artillerysupport"]
 # action : Choose either "warning" (or "message"), "punish" or "kick"
 # note : "punish" will report failures as long as the player isn't alive on map
 OBSERVED_PLAYERS = [
