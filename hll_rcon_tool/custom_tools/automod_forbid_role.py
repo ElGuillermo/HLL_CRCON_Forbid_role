@@ -61,7 +61,8 @@ def filter_players():
                 for soldier in range(len(team_view[team]["squads"][squad]["players"])):
                     if (
                         team_view[team]["squads"][squad]["players"][soldier].get("player_id") == player["id"]
-                        and team_view[team]["squads"][squad]["players"][soldier].get("unit_name") is not None  # Avoids to observe unassigned players reported as "rifleman"
+                        # and team_view[team]["squads"][squad]["players"][soldier].get("unit_name") is not None  # Avoids to observe unassigned players reported as "rifleman"
+                        and team_view[team]["squads"][squad]["players"][soldier].get("unit_name") != "unassigned"  # Avoids to observe unassigned players reported as "rifleman"
                         and team_view[team]["squads"][squad]["players"][soldier].get("role") in player["roles"]
                     ):
                         you_cant_take_this_role(
@@ -88,6 +89,9 @@ def you_cant_take_this_role(
 
     soldier_role_translated = TRANSL[soldier_role][config.LANG]
     soldier_team_translated = TRANSL[soldier_team][config.LANG]
+
+    reason = ""
+    action = "warning"
 
     for player in config.OBSERVED_PLAYERS:
         if soldier_id == player["id"]:
