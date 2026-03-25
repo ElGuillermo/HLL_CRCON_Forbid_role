@@ -42,7 +42,7 @@ LANG = 0
 # roles : available are : ["armycommander", "officer", "rifleman", "engineer", "medic",
 #                          "antitank", "automaticrifleman", "assault", "heavymachinegunner",
 #                          "support", "spotter", "sniper", "tankcommander", "crewman",
-#                          "artilleryobserver", "artilleryengineer", "artillerysupport"]
+#                          "artilleryobserver", "operator", "gunner"]
 # action : Choose either "warning" (or "message"), "punish" or "kick"
 # note : "punish" will report failures as long as the player isn't alive on map
 OBSERVED_PLAYERS = [
