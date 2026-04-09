@@ -24,23 +24,23 @@ that blocks role(s) access to defined players.
   (though it's always a good idea to redownload the files, as they could have been updated)
   ```shell
   cd /root/hll_rcon_tool
-  wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_restart/refs/heads/main/restart.sh
-  mkdir custom_tools
+  wget -O https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_restart/refs/heads/main/restart.sh
+  mkdir -p custom_tools
   cd custom_tools
-  wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_functions.py/refs/heads/main/common_functions.py
-  wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_translations.py/refs/heads/main/common_translations.py
+  wget -O https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_functions.py/refs/heads/main/common_functions.py
+  wget -O https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_translations.py/refs/heads/main/common_translations.py
   ```
   Second part
   ```shell
   cd /root/hll_rcon_tool/custom_tools
-  wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_Forbid_role/refs/heads/main/hll_rcon_tool/custom_tools/automod_forbid_role.py
-  wget https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_Forbid_role/refs/heads/main/hll_rcon_tool/custom_tools/automod_forbid_role_config.py
+  wget -O https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_Forbid_role/refs/heads/main/hll_rcon_tool/custom_tools/automod_forbid_role.py
+  wget -O https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_Forbid_role/refs/heads/main/hll_rcon_tool/custom_tools/automod_forbid_role_config.py
   ```
 - Edit `/root/hll_rcon_tool/config/supervisord.conf` to add this bot section : 
   ```conf
   [program:automod_forbid_role]
   command=python -m custom_tools.automod_forbid_role
-  environment=LOGGING_FILENAME=automod_forbid_role_%(ENV_SERVER_NUMBER)s.log
+  environment=LOGGING_FILENAME=custom_tools_automod_forbid_role_%(ENV_SERVER_NUMBER)s.log
   startretries=100
   startsecs=10
   autostart=false
