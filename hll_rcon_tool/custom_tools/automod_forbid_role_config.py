@@ -93,7 +93,7 @@ PUNISH_MSG = (
 )
 
 # Bot name that will be displayed in CRCON "audit logs" and Discord embeds
-BOT_NAME = "CRCON_forbid_role"
+BOT_NAME = "custom_tools_forbid_role"
 
 # The interval between watch turns (in seconds)
 # Recommended : as the stats must be gathered for all the players,
