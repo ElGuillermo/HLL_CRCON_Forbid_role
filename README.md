@@ -24,10 +24,15 @@ that blocks role(s) access to defined players.
   (though it's always a good idea to redownload the files, as they could have been updated)
   ```shell
   cd /root/hll_rcon_tool
+
   wget -O https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_restart/refs/heads/main/restart.sh
+
   mkdir -p custom_tools
+
   cd custom_tools
+
   wget -O https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_functions.py/refs/heads/main/common_functions.py
+
   wget -O https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_translations.py/refs/heads/main/common_translations.py
   ```
   Second part
@@ -52,7 +57,14 @@ that blocks role(s) access to defined players.
 - Restart CRCON :
   ```shell
   cd /root/hll_rcon_tool
+
   sh ./restart.sh
+  ```
+  If you don't want to use the `restart.sh` script, you can rebuild containers and restart CRCON using Docker commands :  
+  ```shell
+  cd /root/hll_rcon_tool
+
+  sudo docker compose build && sudo docker compose down && sudo docker compose up -d --remove-orphans
   ```
 
 ## Limitations
