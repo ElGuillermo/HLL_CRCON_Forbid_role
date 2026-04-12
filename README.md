@@ -26,19 +26,26 @@ Unofficial plugin for the Hell Let Loose (HLL) [CRCON](https://github.com/Marech
 - Copy/paste/execute these commands :  
   ```shell
   cd /root/hll_rcon_tool
-
+  ```
+  ```shell
   wget -N https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_restart/refs/heads/main/restart.sh
-
+  ```
+  ```shell
   mkdir -p custom_tools
-
+  ```
+  ```shell
   cd custom_tools
-
+  ```
+  ```shell
   wget -N https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_functions.py/refs/heads/main/common_functions.py
-
+  ```
+  ```shell
   wget -N https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_custom_common_translations.py/refs/heads/main/common_translations.py
-  
+  ```
+  ```shell
   wget -N https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_Forbid_role/refs/heads/main/hll_rcon_tool/custom_tools/automod_forbid_role.py
-
+  ```
+  ```shell
   wget -N https://raw.githubusercontent.com/ElGuillermo/HLL_CRCON_Forbid_role/refs/heads/main/hll_rcon_tool/custom_tools/automod_forbid_role_config.py
   ```
 
@@ -66,7 +73,8 @@ Unofficial plugin for the Hell Let Loose (HLL) [CRCON](https://github.com/Marech
 - Copy/paste/execute these commands :  
   ```shell
   cd /root/hll_rcon_tool
-  
+  ```
+  ```shell
   sh ./restart.sh
   ```
 
@@ -76,7 +84,8 @@ Unofficial plugin for the Hell Let Loose (HLL) [CRCON](https://github.com/Marech
 >  - Copy/paste/execute these commands :  
 >  ```shell
 >  cd /root/hll_rcon_tool
->
+>  ```
+>  ```shell
 >  sudo docker compose build && sudo docker compose down && sudo docker compose up -d --remove-orphans
 >  ```
 
@@ -113,9 +122,11 @@ To successfully upgrade your CRCON, you will need to undo the changes in :
 - Copy/paste/execute these commands :  
   ```shell
   cd /root/hll_rcon_tool
-  
+  ```
+  ```shell
   cp config/supervisord.conf config/supervisord.conf.backup
-   
+  ```
+  ```shell
   git restore config/supervisord.conf
   ```
 
@@ -131,10 +142,11 @@ To successfully upgrade your CRCON, you will need to undo the changes in :
   into  
   `/root/hll_rcon_tool/config/supervisord.conf`
 - Rebuild and restart CRCON Docker containers (same procedure as in [Configuration 2/2](#22---rebuild-and-restart-crcon-docker-containers)).
-- If anything works as intended, you can delete the backup file :
+- If everything works as intended, you can delete the backup file :
   - Copy/paste/execute these commands :  
     ```
     cd /root/hll_rcon_tool
-  
+    ```
+    ```shell
     rm config/supervisord.conf.backup
     ```
